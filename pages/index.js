@@ -2,18 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const addFont = css`
-  @font-face {
-    font-family: 'icomoon';
-    src: url('fonts/icomoon.eot?tmeheb');
-    src: url('fonts/icomoon.eot?tmeheb#iefix') format('embedded-opentype'),
-      url('fonts/icomoon.ttf?tmeheb') format('truetype'),
-      url('fonts/icomoon.woff?tmeheb') format('woff'),
-      url('fonts/icomoon.svg?tmeheb#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
-
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -33,11 +21,11 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
 `;
 
-const Html = styled.p`
+const HtmlEntity = styled.span`
   ${addFont}
 `;
 
-const Icon = styled.p`
+const Icon = styled.span`
   ${addFont}
 
   &:before {
@@ -49,10 +37,10 @@ export default () => (
   <React.Fragment>
     <Title>My page</Title>
     <hr />
-    Works
-    <Html>&#xea14;</Html>
+    Works:{' '}
+    <HtmlEntity>&#xea14;</HtmlEntity>
     <hr />
-    Doesnt work
+    Doesnt work:{' '}
     <Icon />
   </React.Fragment>
 );
