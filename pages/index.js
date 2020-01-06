@@ -21,15 +21,23 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
 `;
 
-const HtmlEntity = styled.span`
+const HtmlEntity = styled.p`
   ${addFont}
+  width: 2rem;
+  height: 2rem;
+  background-color: oldlace;
 `;
 
-const Icon = styled.span`
+const Icon = styled.div`
   ${addFont}
+  width: 2rem;
+  height: 2rem;
+  background-color: grey;
 
   &:before {
-    content: '\ea14';
+    content: '\uea14';
+    background-color: yellowgreen;
+    /* font-size: 2rem; */
   }
 `;
 
@@ -37,10 +45,8 @@ export default () => (
   <React.Fragment>
     <Title>My page</Title>
     <hr />
-    Works:{' '}
     <HtmlEntity>&#xea14;</HtmlEntity>
     <hr />
-    Doesnt work:{' '}
     <Icon />
   </React.Fragment>
 );
